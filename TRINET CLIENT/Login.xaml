@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom_components="clr-namespace:TRINET_CLIENT.Components"
+             x:Class="TRINET_CLIENT.Login"
+             Title="Login">
+
+    <Grid RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <custom_components:TrinetTitle Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+        <Image Source="username_input_img.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" HeightRequest="40" WidthRequest="30" HorizontalOptions="End" Margin="0,0,5,0" />
+         <Entry x:Name="UsernameField" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Username" PlaceholderColor="Grey"/>
+        <Image Source="password_input_img.png" Grid.Row="2" Grid.Column="0" Grid.RowSpan="1" HeightRequest="40" WidthRequest="30" HorizontalOptions="End" Margin="0,0,5,0" />
+        <Entry x:Name="PasswordField" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Password" IsPassword="True" PlaceholderColor="Grey"/>
+        <Button Clicked="OnLoginClicked" Text="Login" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#224499" TextColor="White"/>
+        <Label x:Name="ErrorText" Text="" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</ContentPage>

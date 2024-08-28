@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRINET CLIENT", "TRINET CLIENT\TRINET CLIENT.csproj", "{95461B74-536F-4CDB-98E6-FF4330D8C108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95461B74-536F-4CDB-98E6-FF4330D8C108}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CC3D8ED-4DF6-43E2-B9E4-A9BB9CBB3BA0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:custom_components="clr-namespace:TRINET_CLIENT.Components"
+             x:Class="TRINET_CLIENT.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="MainLayout"
+            Padding="30,0"
+            Spacing="25">
+
+            <custom_components:TrinetTitle/>
+
+            <VerticalStackLayout 
+                x:Name="LoadingLayout"
+                Padding="30,0"
+                 Spacing="25">
+                <Label
+                    Text="Synchronising with Trinet Core." HorizontalTextAlignment="Center" />
+                
+                
+                <ActivityIndicator IsRunning="True"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

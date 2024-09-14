@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             x:Class="TRINET_CLIENT.Modals.AddDevice"
+             Title="AddDevice" >
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="Add Device"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            />
+
+        <Label 
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Device Name"
+            VerticalTextAlignment="End"
+            Margin="0"
+            Padding="0"
+            />
+
+        <Entry 
+            Margin="0"
+            Grid.Row="2"
+            x:Name="DeviceName"
+            Grid.Column="1"
+            Placeholder="My Device"
+            />
+
+        <Label
+            Margin="0"
+            Padding="0"
+             VerticalTextAlignment="End"
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="Manufacturer"
+            />
+
+        <Picker
+            Margin="0"
+            Grid.Row="4"
+            x:Name="ManufacturerName"
+            Grid.Column="1"
+            ItemsSource="{Binding ManufacturerList}"
+            />
+
+        <Label
+            Margin="0"
+            Padding="0"
+             VerticalTextAlignment="End"
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="Device Type"
+            />
+
+        <Picker
+            Margin="0"
+            Grid.Row="6"
+            x:Name="DeviceType"
+            Grid.Column="1"
+            ItemsSource="{Binding DeviceList}"
+            />
+
+        <Label 
+            Margin="0"
+            Padding="0"
+            VerticalTextAlignment="End"
+            Grid.Row="7"
+            Grid.Column="1"
+            Text="Network Address"
+           />
+
+        <Entry 
+            Margin="0"
+            Grid.Row="8"
+            Grid.Column="1"
+            x:Name="NetworkAddress"
+            Text="192.168.1."
+            />
+
+        <HorizontalStackLayout
+            Grid.Row="9"
+            Grid.Column="1"
+            HorizontalOptions="Fill"
+            Spacing="20"
+            Padding="0,50,0,0"
+           
+            >
+
+            <Button
+                Text="Add"
+                Clicked="AddButton_Clicked" 
+                WidthRequest="100"
+                />
+
+            <Button 
+                Text="Cancel"
+                Clicked="CancelButton_Clicked"
+                WidthRequest="100"
+                />
+        </HorizontalStackLayout>
+        
+
+    </Grid>
+
+
+</mopups:PopupPage>

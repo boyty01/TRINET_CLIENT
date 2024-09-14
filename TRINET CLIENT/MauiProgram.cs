@@ -1,6 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Mopups.Hosting;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using System.Reflection;
+using TRINET_CLIENT.Global;
+using TRINET_CLIENT.Pages;
+using TRINET_CLIENT.Modules;
 /* Unmerged change from project 'TRINET CLIENT (net8.0-maccatalyst)'
 Before:
 using System.Diagnostics;
@@ -45,12 +50,12 @@ namespace TRINET_CLIENT
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .ConfigureMopups()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
 
 
             var a = Assembly.GetExecutingAssembly();
@@ -59,12 +64,17 @@ namespace TRINET_CLIENT
                         .AddJsonStream(stream)
                         .Build();
 
+            builder.UseSkiaSharp();
 
             builder.Configuration.AddConfiguration(config);
 
-            builder.Services.AddSingleton<TrinetCoreApi>();
 
+            builder.Services.AddSingleton<TrinetCoreApi>();
+            builder.Services.AddSingleton<UserSettings>();
+            builder.Services.AddSingleton<Modules.Wiz.WizModule>();
             builder.Services.AddTransient<Login>();
+            builder.Services.AddTransient<RoomPage>();
+            builder.Services.AddTransient<DeviceLight>();
             builder.Services.AddTransient<HomePage>();
             builder.Services.AddTransient<MainPage>();
 #if DEBUG

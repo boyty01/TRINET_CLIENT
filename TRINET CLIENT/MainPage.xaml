@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:custom_components="clr-namespace:TRINET_CLIENT.Components"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
              x:Class="TRINET_CLIENT.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
+    <ScrollView
+        BackgroundColor="{StaticResource Primary}">
+        
+        <VerticalStackLayout            
             x:Name="MainLayout"
             Padding="30,0"
             Spacing="25">
@@ -21,6 +24,30 @@
                 
                 
                 <ActivityIndicator IsRunning="True"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="50"
+                x:Name="ErrorLayout"
+                >
+
+                <Label 
+                    Text="Failed to connect to server"
+                    />
+
+                <Button 
+                    x:Name="RetryButton"
+                    Clicked="RetryButton_Clicked"
+                    Text="Retry"
+                    />
+
+                <Button 
+                    x:Name="OfflineButton"
+                    Clicked="OfflineButton_Clicked"
+                    Text="Offline Mode"
+                    />
+
             </VerticalStackLayout>
 
         </VerticalStackLayout>

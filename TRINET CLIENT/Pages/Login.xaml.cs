@@ -11,6 +11,9 @@ public partial class Login : ContentPage
         InitializeComponent();
 
         Api = api;
+
+        CoreSettings settings = Api.GetCoreSettings();
+        LogConnectionInfo.Text = settings.CoreUrl;
     }
 
     private async void OnLoginClicked(object sender, EventArgs e)

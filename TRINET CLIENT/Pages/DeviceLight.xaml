@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ColorPicker.Maui;assembly=ColorPicker.Maui"
+             x:Class="TRINET_CLIENT.Pages.DeviceLight"
+             Shell.NavBarIsVisible="False"
+             Title="DeviceLight">
+
+
+
+    <Grid
+        BackgroundColor="{StaticResource Primary}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="auto" />
+            <RowDefinition
+                Height="auto" />
+            <RowDefinition
+                Height="auto" />
+            <RowDefinition
+                Height="auto" />
+            <RowDefinition
+                Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="20" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition
+                Width="20" />
+        </Grid.ColumnDefinitions>
+
+
+        <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"  Margin="0">
+            
+            <Button
+                Text="Home"
+                x:Name="Back_Location"
+                BackgroundColor="black"
+                TextColor="White"
+                Clicked="Back_Location_Clicked" />
+
+            <Label
+                Text="/"
+                TextColor="White"
+                VerticalOptions="Center"    
+                />
+            
+            <Button
+                Text="Room"
+                x:Name="Back_Room"
+                BackgroundColor="black"
+                TextColor="White"
+                Clicked="Back_Room_Clicked" />
+
+        </HorizontalStackLayout>
+        
+        
+        <Switch
+            x:Name="PowerSwitch"
+            Grid.Row="1"
+            Grid.Column="3"
+            Toggled="PowerSwitch_Toggled" />
+
+        <VerticalStackLayout
+            Spacing="20"
+            Grid.Row="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="2">
+
+            <Label
+                Text="Colour" />
+
+            <controls:ColorPicker
+                x:Name="ColorPicker"
+                ColorFlowDirection="Horizontal"
+                ColorSpectrumStyle="HueOnlyStyle"
+                PickedColorChanged="ColorPicker_PickedColorChanged"
+                PointerRingBorderUnits="0.2"
+                PointerRingDiameterUnits="0.4"
+                HeightRequest="150" />
+
+            <Label
+                Text="Brightness" />
+
+            <Slider
+                x:Name="BrightnessSlider"
+                Maximum="1"
+                ValueChanged="BrightnessSlider_ValueChanged" />
+        </VerticalStackLayout>
+
+  
+
+    </Grid>
+</ContentPage>

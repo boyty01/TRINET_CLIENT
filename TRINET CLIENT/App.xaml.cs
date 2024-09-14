@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
+using TRINET_CLIENT.Pages;
 
 namespace TRINET_CLIENT
 {
@@ -20,6 +21,10 @@ namespace TRINET_CLIENT
             Routing.RegisterRoute(nameof(TRINET_CLIENT.MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(Login), typeof(Login));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(RoomPage), typeof(RoomPage));
+
+            //devices
+            Routing.RegisterRoute(nameof(DeviceLight), typeof(DeviceLight));
         }
     }
 }

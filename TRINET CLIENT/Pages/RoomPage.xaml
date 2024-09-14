@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRINET_CLIENT.Pages.RoomPage"
+    Shell.NavBarIsVisible="False"
+    Title="RoomPage">
+    
+    <VerticalStackLayout
+        BackgroundColor="{StaticResource Primary}"
+        >
+
+       
+        
+        <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+            <HorizontalStackLayout
+                Grid.Row="2"
+                Grid.Column="2"
+                HorizontalOptions="End"
+                Spacing="30"
+                >
+
+                <ImageButton
+                    Aspect="AspectFit"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Source="delete_icon.png"
+                    BackgroundColor="Red"
+                    Clicked="DeleteButton_Clicked" />
+
+                <Button
+                    VerticalOptions="Start"
+                    Text="+"
+                    Clicked="AddButton_Clicked"
+                    MaximumHeightRequest="50"
+                    MaximumWidthRequest="50"
+                    HeightRequest="50"
+                    WidthRequest="50" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                HeightRequest="50"
+                >
+
+                <Button                   
+                    Text="Home"
+                    x:Name="Back_Location"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="Back_Location_Clicked" 
+                    />
+
+
+
+            </HorizontalStackLayout>
+
+
+
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+            x:Name="RoomName"
+            Text="{Binding Name}"
+            FontAttributes="Bold"
+            LineBreakMode="NoWrap" 
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Start"
+            MaximumHeightRequest="20"
+               
+        />
+
+    
+
+        <CollectionView             
+            Grid.Row="3" 
+            Grid.RowSpan="1"
+            Grid.Column="1" 
+            Grid.ColumnSpan="4" 
+            x:Name="DeviceList" 
+            SelectionMode="Single"
+            SelectionChanged="DeviceList_SelectionChanged"
+            EmptyView="Empty"
+            HorizontalOptions="Fill"
+            Margin="10,40,10,0"
+        >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10"></GridItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 20,20,20,20" BackgroundColor="#000044">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1"
+                                    Source="bulb.png"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Start"
+                                    Margin="15,0,15,0"
+                                    MaximumHeightRequest="20"
+                                    MaximumWidthRequest="20"      
+                            />
+
+                                <Grid Grid.Row="0" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="80" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Label 
+                                    Text="{Binding Name}"
+                                    FontAttributes="Bold"
+                                    LineBreakMode="NoWrap" 
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center"
+                                />
+
+
+                                </Grid>
+                            </Grid>
+                        </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+    </VerticalStackLayout>
+</ContentPage>

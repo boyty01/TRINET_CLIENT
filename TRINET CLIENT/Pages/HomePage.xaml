@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TRINET_CLIENT.HomePage"
              xmlns:custom_components="clr-namespace:TRINET_CLIENT.Components"
-             Title="HomePage">
+             Shell.NavBarIsVisible="False"
+             Title="HomePage"
+             >
 
-
-    <Grid x:Name="MainLayout">
+    <Grid x:Name="MainLayout"
+        BackgroundColor="{StaticResource Primary}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -20,6 +22,16 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+        
         <CollectionView 
             Grid.Row="1" 
             Grid.RowSpan="3"
@@ -27,7 +39,7 @@
             Grid.ColumnSpan="4" 
             x:Name="RoomList" 
             SelectionMode="Single"
-            SelectionChanged="CollectionView_SelectionChanged" 
+            SelectionChanged="RoomList_SelectionChanged"
             EmptyView="Empty"
             HorizontalOptions="Fill"
             Margin="10,0,10,0"
@@ -78,7 +90,7 @@
         </CollectionView>
 
 
-        <Button Grid.Row="0" Grid.Column="3" Text="+" Clicked="Button_Clicked_AddRoom" MaximumHeightRequest="10" MaximumWidthRequest="10" HeightRequest="10" WidthRequest="10"/>
+        <Button Grid.Row="0" Grid.Column="3" Text="+" Clicked="Button_Clicked_AddRoom" MaximumHeightRequest="50" MaximumWidthRequest="50" HeightRequest="50" WidthRequest="50"/>
         
     </Grid>
 </ContentPage>

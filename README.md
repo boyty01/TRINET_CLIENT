@@ -1,6 +1,6 @@
 # What is Trinet Client
 Trinet Client is the user interface for the Trinet smart home system. Trinet is a personal project, built to simplify controlling all of my smart home devices. This software is public purely for educational purposes and is not intended as a distribution of functional, commercial software.
-It is currently an ongoing WIP and is in need of refactor for scalability.  If you're purely interested in the modules and how to communicate with different device API's, look for the manufacturer API notes in the modules that break down the official endpoints and payloads.
+It is currently an ongoing WIP and is in need of refactor for scalability. 
 
 ## Dependencies
 Trinet client requires an instance of trinet core to be reachable via a network. 
